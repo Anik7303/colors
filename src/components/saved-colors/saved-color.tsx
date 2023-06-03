@@ -1,21 +1,18 @@
-import { Dispatch, MouseEventHandler } from 'react';
+import { MouseEventHandler, useContext } from 'react';
 import Button from '../shared/button';
 import ColorChangeSwatch from '../shared/color-change-swatch';
+import { ColorContext } from '../../contexts/color';
 
 type SavedColorProps = {
-  dispatch: Dispatch<ColorActions>;
   name: string;
   hexColor: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onRemove?: () => void;
 };
 
-const SavedColor = ({
-  dispatch,
-  name,
-  hexColor,
-  onRemove,
-}: SavedColorProps) => {
+const SavedColor = ({ name, hexColor, onRemove }: SavedColorProps) => {
+  const { dispatch } = useContext(ColorContext);
+
   return (
     <article className="flex place-content-between items-center gap-2">
       <ColorChangeSwatch

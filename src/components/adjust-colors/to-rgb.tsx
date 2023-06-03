@@ -3,7 +3,7 @@ import { hex } from 'color-convert';
 import LabeledInput from '../shared/labeled-input';
 
 type HexToRGBProps = {
-  dispatch: Dispatch<AdjustColorActions>;
+  dispatch: Dispatch<ColorActions>;
   hexColor: string;
 };
 

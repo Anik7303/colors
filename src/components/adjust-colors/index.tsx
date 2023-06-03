@@ -6,7 +6,7 @@ import HexToHSV from './to-hsv';
 import HexToRGB from './to-rgb';
 
 type AdjustColorsProps = {
-  dispatch: Dispatch<AdjustColorActions>;
+  dispatch: Dispatch<ColorActions>;
   hexColor: string;
 };
 

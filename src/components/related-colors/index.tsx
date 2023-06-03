@@ -1,3 +1,4 @@
+import { Dispatch } from 'react';
 import {
   getComplementColors,
   getTriadColors,
@@ -5,17 +6,23 @@ import {
 import RelatedColorPalette from './related-color-palette';
 
 type RelatedColorsProps = {
+  dispatch: Dispatch<ColorActions>;
   hexColor: string;
 };
 
-const RelatedColors = ({ hexColor }: RelatedColorsProps) => {
+const RelatedColors = ({ dispatch, hexColor }: RelatedColorsProps) => {
   const triadColors = getTriadColors(hexColor);
   const complementColors = getComplementColors(hexColor);
 
   return (
     <>
-      <RelatedColorPalette title="Triad Colors" hexColors={triadColors} />
       <RelatedColorPalette
+        dispatch={dispatch}
+        title="Triad Colors"
+        hexColors={triadColors}
+      />
+      <RelatedColorPalette
+        dispatch={dispatch}
         title="Complimentary Colors"
         hexColors={complementColors}
       />

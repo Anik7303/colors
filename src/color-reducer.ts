@@ -10,7 +10,7 @@ export const initialState: ColorState = {
 
 export const colorReducer = (
   state: ColorState = initialState,
-  action: AdjustColorActions,
+  action: ColorActions,
 ) => {
   switch (action.type) {
     case 'update-hex-color':

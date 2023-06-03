@@ -15,6 +15,7 @@ const AddSavedColor = ({ onSave }: PropsWithChildren<AddSavedColorProps>) => {
       onSubmit={(e) => {
         e.preventDefault();
         onSave(savedColorName);
+        setSavedColorName('');
       }}
     >
       <LabeledInput

@@ -3,7 +3,7 @@ import { hex } from 'color-convert';
 import LabeledInput from '../shared/labeled-input';
 
 type HexToCMYKProps = {
-  dispatch: Dispatch<AdjustColorActions>;
+  dispatch: Dispatch<ColorActions>;
   hexColor: string;
 };
 

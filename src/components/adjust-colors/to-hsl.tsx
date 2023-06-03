@@ -3,7 +3,7 @@ import { hex } from 'color-convert';
 import LabeledInput from '../shared/labeled-input';
 
 type HexToHSLProps = {
-  dispatch: Dispatch<AdjustColorActions>;
+  dispatch: Dispatch<ColorActions>;
   hexColor: string;
 };
 

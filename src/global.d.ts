@@ -33,7 +33,7 @@ type UpdateCMYKColorAction = {
   };
 };
 
-type AdjustColorActions =
+type ColorActions =
   | UpdateHexColorAction
   | UpdateRGBColorAction
   | UpdateHSLColorAction

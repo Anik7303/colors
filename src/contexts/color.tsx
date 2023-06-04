@@ -1,4 +1,10 @@
-import { Dispatch, PropsWithChildren, createContext, useReducer } from 'react';
+import {
+  Dispatch,
+  PropsWithChildren,
+  createContext,
+  useMemo,
+  useReducer,
+} from 'react';
 import { colorReducer, initialState } from '../color-reducer';
 
 export type ColorContextState = {
@@ -13,9 +19,9 @@ export const ColorContext = createContext<ColorContextState>({
 export const ColorProvider = ({ children }: PropsWithChildren) => {
   const [{ hexColor }, dispatch] = useReducer(colorReducer, initialState);
 
+  const value = useMemo(() => ({ hexColor, dispatch }), [hexColor, dispatch]);
+
   return (
-    <ColorContext.Provider value={{ hexColor, dispatch }}>
-      {children}
-    </ColorContext.Provider>
+    <ColorContext.Provider value={value}>{children}</ColorContext.Provider>
   );
 };

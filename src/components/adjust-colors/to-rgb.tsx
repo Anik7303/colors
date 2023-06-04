@@ -15,9 +15,7 @@ const HexToRGB = ({ hexColor }: HexToRGBProps) => {
   const updateRGB = ({ red = r, green = g, blue = b }): void => {
     dispatch({
       type: 'update-rgb-color',
-      payload: {
-        rgb: [red, green, blue],
-      },
+      payload: { rgb: [red, green, blue] },
     });
   };
 
@@ -27,25 +25,19 @@ const HexToRGB = ({ hexColor }: HexToRGBProps) => {
         label="R"
         type="number"
         value={r}
-        onChange={(e) =>
-          updateRGB({ red: e.target.valueAsNumber, green: g, blue: b })
-        }
+        onChange={(e) => updateRGB({ red: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="G"
         type="number"
         value={g}
-        onChange={(e) =>
-          updateRGB({ red: r, green: e.target.valueAsNumber, blue: b })
-        }
+        onChange={(e) => updateRGB({ green: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="B"
         type="number"
         value={b}
-        onChange={(e) =>
-          updateRGB({ red: r, green: g, blue: e.target.valueAsNumber })
-        }
+        onChange={(e) => updateRGB({ blue: e.target.valueAsNumber })}
       />
     </section>
   );

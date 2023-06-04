@@ -15,9 +15,7 @@ const HexToHSL = ({ hexColor }: HexToHSLProps) => {
   const updateHSL = ({ hue = h, saturation = s, lightness = l }): void => {
     dispatch({
       type: 'update-hsl-color',
-      payload: {
-        hsl: [hue, saturation, lightness],
-      },
+      payload: { hsl: [hue, saturation, lightness] },
     });
   };
 
@@ -27,37 +25,19 @@ const HexToHSL = ({ hexColor }: HexToHSLProps) => {
         label="H"
         type="number"
         value={h}
-        onChange={(e) =>
-          updateHSL({
-            hue: e.target.valueAsNumber,
-            saturation: s,
-            lightness: l,
-          })
-        }
+        onChange={(e) => updateHSL({ hue: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="S"
         type="number"
         value={s}
-        onChange={(e) =>
-          updateHSL({
-            hue: h,
-            saturation: e.target.valueAsNumber,
-            lightness: l,
-          })
-        }
+        onChange={(e) => updateHSL({ saturation: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="L"
         type="number"
         value={l}
-        onChange={(e) =>
-          updateHSL({
-            hue: h,
-            saturation: s,
-            lightness: e.target.valueAsNumber,
-          })
-        }
+        onChange={(e) => updateHSL({ lightness: e.target.valueAsNumber })}
       />
     </section>
   );

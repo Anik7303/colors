@@ -25,53 +25,25 @@ const HexToCMYK = ({ hexColor }: HexToCMYKProps) => {
         label="C"
         type="number"
         value={c}
-        onChange={(e) =>
-          updateCMYK({
-            cyan: e.target.valueAsNumber,
-            magenta: m,
-            yellow: y,
-            key: k,
-          })
-        }
+        onChange={(e) => updateCMYK({ cyan: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="M"
         type="number"
         value={m}
-        onChange={(e) =>
-          updateCMYK({
-            cyan: c,
-            magenta: e.target.valueAsNumber,
-            yellow: y,
-            key: k,
-          })
-        }
+        onChange={(e) => updateCMYK({ magenta: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="Y"
         type="number"
         value={y}
-        onChange={(e) =>
-          updateCMYK({
-            cyan: c,
-            magenta: m,
-            yellow: e.target.valueAsNumber,
-            key: k,
-          })
-        }
+        onChange={(e) => updateCMYK({ yellow: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="K"
         type="number"
         value={k}
-        onChange={(e) =>
-          updateCMYK({
-            cyan: c,
-            magenta: m,
-            yellow: y,
-            key: e.target.valueAsNumber,
-          })
-        }
+        onChange={(e) => updateCMYK({ key: e.target.valueAsNumber })}
       />
     </section>
   );

@@ -25,25 +25,19 @@ const HexToHSV = ({ hexColor }: HexToHSVProps) => {
         label="H"
         type="number"
         value={h}
-        onChange={(e) =>
-          updateHSV({ hue: e.target.valueAsNumber, saturation: s, value: v })
-        }
+        onChange={(e) => updateHSV({ hue: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="S"
         type="number"
         value={s}
-        onChange={(e) =>
-          updateHSV({ hue: h, saturation: e.target.valueAsNumber, value: v })
-        }
+        onChange={(e) => updateHSV({ saturation: e.target.valueAsNumber })}
       />
       <LabeledInput
         label="V"
         type="number"
         value={v}
-        onChange={(e) =>
-          updateHSV({ hue: h, saturation: s, value: e.target.valueAsNumber })
-        }
+        onChange={(e) => updateHSV({ value: e.target.valueAsNumber })}
       />
     </section>
   );

@@ -16,7 +16,7 @@ const ColorSelect = ({
   return (
     <div className="flex flex-col gap-2">
       <LabeledInput
-        label="Color"
+        label={label}
         id="color-input"
         className="h-80 w-full"
         type="color"

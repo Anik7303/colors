@@ -17,13 +17,13 @@ export const colorReducer = (
       const { hexColor } = action.payload;
       return { ...state, hexColor };
     case 'update-rgb-color':
-      return { ...state, hexColor: '#' + rgb.hex(action.payload.rgb) };
+      return { ...state, hexColor: `#${rgb.hex(action.payload.rgb)}` };
     case 'update-hsl-color':
-      return { ...state, hexColor: '#' + hsl.hex(action.payload.hsl) };
+      return { ...state, hexColor: `#${hsl.hex(action.payload.hsl)}` };
     case 'update-hsv-color':
-      return { ...state, hexColor: '#' + hsv.hex(action.payload.hsv) };
+      return { ...state, hexColor: `#${hsv.hex(action.payload.hsv)}` };
     case 'update-cmyk-color':
-      return { ...state, hexColor: '#' + cmyk.hex(action.payload.cmyk) };
+      return { ...state, hexColor: `#${cmyk.hex(action.payload.cmyk)}` };
     default:
       return state;
   }

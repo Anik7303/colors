@@ -33,9 +33,4 @@ type UpdateCMYKColorAction = {
   };
 };
 
-type ColorActions =
-  | UpdateHexColorAction
-  | UpdateRGBColorAction
-  | UpdateHSLColorAction
-  | UpdateHSVColorAction
-  | UpdateCMYKColorAction;
+type ColorActions = UpdateHexColorAction | UpdateRGBColorAction | UpdateHSLColorAction | UpdateHSVColorAction | UpdateCMYKColorAction;

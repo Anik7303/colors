@@ -1,14 +1,13 @@
-import { useContext } from 'react';
 import { hex } from 'color-convert';
 import LabeledInput from '../shared/labeled-input';
-import { ColorContext } from '../../contexts/color';
+import { useDispatch } from '../../contexts/color';
 
 type HexToHSLProps = {
   hexColor: string;
 };
 
 const HexToHSL = ({ hexColor }: HexToHSLProps) => {
-  const { dispatch } = useContext(ColorContext);
+  const dispatch = useDispatch();
   const color = hex.hsl(hexColor);
   const [h, s, l] = color;
 
